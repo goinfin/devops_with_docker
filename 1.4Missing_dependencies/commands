@@ -1,0 +1,201 @@
+Script started on 2024-04-27 14:17:27+03:00 [TERM="xterm-256color" TTY="/dev/pts/0" COLUMNS="114" LINES="37"]
+[?2004h]0;noadmin@lpc: ~/projects/devops_with_docker/1.4Missing_dependencies[01;32mnoadmin@lpc[00m:[01;34m~/projects/devops_with_docker/1.4Missing_dependencies[00m$ docker run -d --rm -it --name depend ubuntu sh  -c 'while true; do echo "Input website:"; read webd[Ksite; echo "Searching.."; sleep 1; curl http://$website; done'
+[?2004l2b0c7243a94bae7b0c2a15cdfa765e1561cbbbbdb223498e4c6d7c351208dc9d
+[?2004h]0;noadmin@lpc: ~/projects/devops_with_docker/1.4Missing_dependencies[01;32mnoadmin@lpc[00m:[01;34m~/projects/devops_with_docker/1.4Missing_dependencies[00m$ docker ps
+[?2004lCONTAINER ID   IMAGE     COMMAND                  CREATED         STATUS         PORTS     NAMES
+2b0c7243a94b   ubuntu    "sh -c 'while true; …"   5 seconds ago   Up 4 seconds             depend
+[?2004h]0;noadmin@lpc: ~/projects/devops_with_docker/1.4Missing_dependencies[01;32mnoadmin@lpc[00m:[01;34m~/projects/devops_with_docker/1.4Missing_dependencies[00m$ docker attach --no-stdin depend
+[?2004l^P  ^P
+^C
+[?2004h]0;noadmin@lpc: ~/projects/devops_with_docker/1.4Missing_dependencies[01;32mnoadmin@lpc[00m:[01;34m~/projects/devops_with_docker/1.4Missing_dependencies[00m$ docker attach --no-stdin dependps[Krun -d --rm -it --name depend ubuntu sh -c 'while true; do echo "Input website:"; read website; echo "Searching.."; sleep 1; curl http://$website; done'[Aps[K
+[K[A[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C
+[?2004lCONTAINER ID   IMAGE     COMMAND                  CREATED         STATUS         PORTS     NAMES
+2b0c7243a94b   ubuntu    "sh -c 'while true; …"   2 minutes ago   Up 2 minutes             depend
+[?2004h]0;noadmin@lpc: ~/projects/devops_with_docker/1.4Missing_dependencies[01;32mnoadmin@lpc[00m:[01;34m~/projects/devops_with_docker/1.4Missing_dependencies[00m$ 
+[?2004l[?2004h]0;noadmin@lpc: ~/projects/devops_with_docker/1.4Missing_dependencies[01;32mnoadmin@lpc[00m:[01;34m~/projects/devops_with_docker/1.4Missing_dependencies[00m$ 
+[?2004l[?2004h]0;noadmin@lpc: ~/projects/devops_with_docker/1.4Missing_dependencies[01;32mnoadmin@lpc[00m:[01;34m~/projects/devops_with_docker/1.4Missing_dependencies[00m$ docker exec -it depend bash
+[?2004l[?2004h]0;root@2b0c7243a94b: /root@2b0c7243a94b:/# apt-get update
+[?2004l0% [Working]            Get:1 http://archive.ubuntu.com/ubuntu noble InRelease [256 kB]
+0% [1 InRelease 1040 B/256 kB 0%] [Waiting for headers]                                                       Get:2 http://security.ubuntu.com/ubuntu noble-security InRelease [90.7 kB]
+0% [1 InRelease 11.9 kB/256 kB 5%] [2 InRelease 1041 B/90.7 kB 1%]                                                                  0% [1 InRelease 255 kB/256 kB 100%]                                   0% [Working]0% [Waiting for headers]                        Get:3 http://archive.ubuntu.com/ubuntu noble-updates InRelease [89.7 kB]
+0% [3 InRelease 2478 B/89.7 kB 3%]0% [3 InRelease 88.7 kB/89.7 kB 99%]                                    0% [Working]0% [Waiting for headers]                        Get:4 http://archive.ubuntu.com/ubuntu noble-backports InRelease [90.8 kB]
+0% [4 InRelease 3820 B/90.8 kB 4%]                                  0% [Working]20% [Waiting for headers]                         Get:5 http://archive.ubuntu.com/ubuntu noble/main amd64 Packages [1808 kB]
+20% [5 Packages 2655 B/1808 kB 0%]                                  26% [Waiting for headers]                         Get:6 http://archive.ubuntu.com/ubuntu noble/restricted amd64 Packages [117 kB]
+27% [6 Packages 80.8 kB/117 kB 69%]27% [5 Packages store 0 B] [6 Packages 80.8 kB/117 kB 69%]                                                          27% [6 Packages 80.8 kB/117 kB 69%]                                   27% [Waiting for headers]                         Get:7 http://archive.ubuntu.com/ubuntu noble/universe amd64 Packages [19.3 MB]
+27% [7 Packages 20.8 kB/19.3 MB 0%]27% [6 Packages store 0 B] [7 Packages 22.2 kB/19.3 MB 0%]                                                          28% [7 Packages 105 kB/19.3 MB 1%]43% [7 Packages 4219 kB/19.3 MB 22%]67% [7 Packages 10.8 MB/19.3 MB 56%]83% [7 Packages 15.3 MB/19.3 MB 79%]98% [7 Packages 19.3 MB/19.3 MB 100%]                                     98% [Waiting for headers]                         Get:8 http://archive.ubuntu.com/ubuntu noble/multiverse amd64 Packages [331 kB]
+98% [8 Packages 16.4 kB/331 kB 5%]98% [7 Packages store 0 B] [8 Packages 49.2 kB/331 kB 15%]                                                          99% [7 Packages store 0 B]99% [7 Packages store 0 B]                          99% [Working]99% [8 Packages store 0 B]                          100% [Working]              Fetched 22.1 MB in 4s (5246 kB/s)
+Reading package lists... 0%Reading package lists... 0%Reading package lists... 0%Reading package lists... 8%Reading package lists... 8%Reading package lists... 97%Reading package lists... 97%Reading package lists... 98%Reading package lists... 98%Reading package lists... 99%Reading package lists... 99%Reading package lists... Done
+[?2004h]0;root@2b0c7243a94b: /root@2b0c7243a94b:/# apt-get in  -y install curl
+[?2004lReading package lists... 0%Reading package lists... 0%Reading package lists... 0%Reading package lists... 8%Reading package lists... 8%Reading package lists... 97%Reading package lists... 97%Reading package lists... 98%Reading package lists... 98%Reading package lists... 99%Reading package lists... 99%Reading package lists... Done
+Building dependency tree... 0%Building dependency tree... 0%Building dependency tree... 50%Building dependency tree... 50%Building dependency tree... Done
+Reading state information... 0% Reading state information... 0%Reading state information... Done
+The following additional packages will be installed:
+  ca-certificates krb5-locales libbrotli1 libcurl4t64 libdb5.3t64 libgssapi-krb5-2 libk5crypto3 libkeyutils1
+  libkrb5-3 libkrb5support0 libldap-common libldap2 libnghttp2-14 libpsl5t64 librtmp1 libsasl2-2
+  libsasl2-modules libsasl2-modules-db libssh-4 openssl publicsuffix
+Suggested packages:
+  krb5-doc krb5-user libsasl2-modules-gssapi-mit | libsasl2-modules-gssapi-heimdal libsasl2-modules-ldap
+  libsasl2-modules-otp libsasl2-modules-sql
+The following NEW packages will be installed:
+  ca-certificates curl krb5-locales libbrotli1 libcurl4t64 libdb5.3t64 libgssapi-krb5-2 libk5crypto3
+  libkeyutils1 libkrb5-3 libkrb5support0 libldap-common libldap2 libnghttp2-14 libpsl5t64 librtmp1 libsasl2-2
+  libsasl2-modules libsasl2-modules-db libssh-4 openssl publicsuffix
+0 upgraded, 22 newly installed, 0 to remove and 0 not upgraded.
+Need to get 4295 kB of archives.
+After this operation, 11.0 MB of additional disk space will be used.
+0% [Working]            Get:1 http://archive.ubuntu.com/ubuntu noble/main amd64 openssl amd64 3.0.13-0ubuntu3 [1002 kB]
+0% [1 openssl 1155 B/1002 kB 0%]3% [1 openssl 173 kB/1002 kB 17%]                                 20% [Working]             Get:2 http://archive.ubuntu.com/ubuntu noble/main amd64 ca-certificates all 20240203 [159 kB]
+20% [2 ca-certificates 2392 B/159 kB 2%]                                        23% [Waiting for headers]                         Get:3 http://archive.ubuntu.com/ubuntu noble/main amd64 krb5-locales all 1.20.1-6ubuntu2 [13.8 kB]
+24% [3 krb5-locales 5318 B/13.8 kB 38%]                                       25% [Working]             Get:4 http://archive.ubuntu.com/ubuntu noble/main amd64 libdb5.3t64 amd64 5.3.28+dfsg2-7 [734 kB]
+25% [4 libdb5.3t64 4616 B/734 kB 1%]                                    39% [Waiting for headers]                         Get:5 http://archive.ubuntu.com/ubuntu noble/main amd64 libkrb5support0 amd64 1.20.1-6ubuntu2 [33.5 kB]
+39% [5 libkrb5support0 6984 B/33.5 kB 21%]                                          41% [Waiting for headers]                         Get:6 http://archive.ubuntu.com/ubuntu noble/main amd64 libk5crypto3 amd64 1.20.1-6ubuntu2 [81.7 kB]
+41% [6 libk5crypto3 4083 B/81.7 kB 5%]                                      43% [Working]             Get:7 http://archive.ubuntu.com/ubuntu noble/main amd64 libkeyutils1 amd64 1.6.3-3build1 [9490 B]
+43% [7 libkeyutils1 4613 B/9490 B 49%]                                      44% [Working]             Get:8 http://archive.ubuntu.com/ubuntu noble/main amd64 libkrb5-3 amd64 1.20.1-6ubuntu2 [347 kB]
+44% [8 libkrb5-3 4225 B/347 kB 1%]                                  Get:9 http://archive.ubuntu.com/ubuntu noble/main amd64 libgssapi-krb5-2 amd64 1.20.1-6ubuntu2 [142 kB]
+52% [9 libgssapi-krb5-2 5529 B/142 kB 4%]                                         55% [Waiting for headers]                         Get:10 http://archive.ubuntu.com/ubuntu noble/main amd64 libnghttp2-14 amd64 1.59.0-1build4 [73.9 kB]
+56% [10 libnghttp2-14 29.6 kB/73.9 kB 40%]                                          57% [Waiting for headers]                         Get:11 http://archive.ubuntu.com/ubuntu noble/main amd64 libpsl5t64 amd64 0.21.2-1.1build1 [57.1 kB]
+58% [11 libpsl5t64 20.9 kB/57.1 kB 37%]                                       59% [Waiting for headers]                         Get:12 http://archive.ubuntu.com/ubuntu noble/main amd64 publicsuffix all 20231001.0357-0.1 [129 kB]
+60% [12 publicsuffix 16.4 kB/129 kB 13%]                                        63% [Waiting for headers]                         Get:13 http://archive.ubuntu.com/ubuntu noble/main amd64 libbrotli1 amd64 1.1.0-2build2 [331 kB]
+63% [13 libbrotli1 4630 B/331 kB 1%]                                    70% [Waiting for headers]                         Get:14 http://archive.ubuntu.com/ubuntu noble/main amd64 libsasl2-modules-db amd64 2.1.28+dfsg1-5ubuntu3 [20.3 kB]
+70% [14 libsasl2-modules-db 4096 B/20.3 kB 20%]                                               71% [Waiting for headers]                         Get:15 http://archive.ubuntu.com/ubuntu noble/main amd64 libsasl2-2 amd64 2.1.28+dfsg1-5ubuntu3 [53.2 kB]
+71% [15 libsasl2-2 3328 B/53.2 kB 6%]                                     73% [Waiting for headers]                         Get:16 http://archive.ubuntu.com/ubuntu noble/main amd64 libldap2 amd64 2.6.7+dfsg-1~exp1ubuntu8 [195 kB]
+73% [16 libldap2 4864 B/195 kB 2%]                                  78% [Waiting for headers]                         Get:17 http://archive.ubuntu.com/ubuntu noble/main amd64 librtmp1 amd64 2.4+20151223.gitfa8646d.1-2build7 [56.3 kB]
+78% [17 librtmp1 3910 B/56.3 kB 7%]                                   80% [Waiting for headers]                         Get:18 http://archive.ubuntu.com/ubuntu noble/main amd64 libssh-4 amd64 0.10.6-2build2 [188 kB]
+80% [18 libssh-4 2392 B/188 kB 1%]                                  84% [Waiting for headers]                         Get:19 http://archive.ubuntu.com/ubuntu noble/main amd64 libcurl4t64 amd64 8.5.0-2ubuntu10 [340 kB]
+84% [19 libcurl4t64 4970 B/340 kB 1%]                                     91% [Waiting for headers]                         Get:20 http://archive.ubuntu.com/ubuntu noble/main amd64 curl amd64 8.5.0-2ubuntu10 [227 kB]
+91% [20 curl 5088 B/227 kB 2%]                              96% [Working]             Get:21 http://archive.ubuntu.com/ubuntu noble/main amd64 libldap-common all 2.6.7+dfsg-1~exp1ubuntu8 [31.4 kB]
+96% [21 libldap-common 5024 B/31.4 kB 16%]                                          98% [Waiting for headers]                         Get:22 http://archive.ubuntu.com/ubuntu noble/main amd64 libsasl2-modules amd64 2.1.28+dfsg1-5ubuntu3 [69.7 kB]
+98% [22 libsasl2-modules 2393 B/69.7 kB 3%]                                           100% [Working]              Fetched 4295 kB in 2s (2243 kB/s)
+debconf: delaying package configuration, since apt-utils is not installed
+Selecting previously unselected package openssl.
+(Reading database ... (Reading database ... 5%(Reading database ... 10%(Reading database ... 15%(Reading database ... 20%(Reading database ... 25%(Reading database ... 30%(Reading database ... 35%(Reading database ... 40%(Reading database ... 45%(Reading database ... 50%(Reading database ... 55%(Reading database ... 60%(Reading database ... 65%(Reading database ... 70%(Reading database ... 75%(Reading database ... 80%(Reading database ... 85%(Reading database ... 90%(Reading database ... 95%(Reading database ... 100%(Reading database ... 4368 files and directories currently installed.)
+Preparing to unpack .../00-openssl_3.0.13-0ubuntu3_amd64.deb ...
+Unpacking openssl (3.0.13-0ubuntu3) ...
+Selecting previously unselected package ca-certificates.
+Preparing to unpack .../01-ca-certificates_20240203_all.deb ...
+Unpacking ca-certificates (20240203) ...
+Selecting previously unselected package krb5-locales.
+Preparing to unpack .../02-krb5-locales_1.20.1-6ubuntu2_all.deb ...
+Unpacking krb5-locales (1.20.1-6ubuntu2) ...
+Selecting previously unselected package libdb5.3t64:amd64.
+Preparing to unpack .../03-libdb5.3t64_5.3.28+dfsg2-7_amd64.deb ...
+Unpacking libdb5.3t64:amd64 (5.3.28+dfsg2-7) ...
+Selecting previously unselected package libkrb5support0:amd64.
+Preparing to unpack .../04-libkrb5support0_1.20.1-6ubuntu2_amd64.deb ...
+Unpacking libkrb5support0:amd64 (1.20.1-6ubuntu2) ...
+Selecting previously unselected package libk5crypto3:amd64.
+Preparing to unpack .../05-libk5crypto3_1.20.1-6ubuntu2_amd64.deb ...
+Unpacking libk5crypto3:amd64 (1.20.1-6ubuntu2) ...
+Selecting previously unselected package libkeyutils1:amd64.
+Preparing to unpack .../06-libkeyutils1_1.6.3-3build1_amd64.deb ...
+Unpacking libkeyutils1:amd64 (1.6.3-3build1) ...
+Selecting previously unselected package libkrb5-3:amd64.
+Preparing to unpack .../07-libkrb5-3_1.20.1-6ubuntu2_amd64.deb ...
+Unpacking libkrb5-3:amd64 (1.20.1-6ubuntu2) ...
+Selecting previously unselected package libgssapi-krb5-2:amd64.
+Preparing to unpack .../08-libgssapi-krb5-2_1.20.1-6ubuntu2_amd64.deb ...
+Unpacking libgssapi-krb5-2:amd64 (1.20.1-6ubuntu2) ...
+Selecting previously unselected package libnghttp2-14:amd64.
+Preparing to unpack .../09-libnghttp2-14_1.59.0-1build4_amd64.deb ...
+Unpacking libnghttp2-14:amd64 (1.59.0-1build4) ...
+Selecting previously unselected package libpsl5t64:amd64.
+Preparing to unpack .../10-libpsl5t64_0.21.2-1.1build1_amd64.deb ...
+Unpacking libpsl5t64:amd64 (0.21.2-1.1build1) ...
+Selecting previously unselected package publicsuffix.
+Preparing to unpack .../11-publicsuffix_20231001.0357-0.1_all.deb ...
+Unpacking publicsuffix (20231001.0357-0.1) ...
+Selecting previously unselected package libbrotli1:amd64.
+Preparing to unpack .../12-libbrotli1_1.1.0-2build2_amd64.deb ...
+Unpacking libbrotli1:amd64 (1.1.0-2build2) ...
+Selecting previously unselected package libsasl2-modules-db:amd64.
+Preparing to unpack .../13-libsasl2-modules-db_2.1.28+dfsg1-5ubuntu3_amd64.deb ...
+Unpacking libsasl2-modules-db:amd64 (2.1.28+dfsg1-5ubuntu3) ...
+Selecting previously unselected package libsasl2-2:amd64.
+Preparing to unpack .../14-libsasl2-2_2.1.28+dfsg1-5ubuntu3_amd64.deb ...
+Unpacking libsasl2-2:amd64 (2.1.28+dfsg1-5ubuntu3) ...
+Selecting previously unselected package libldap2:amd64.
+Preparing to unpack .../15-libldap2_2.6.7+dfsg-1~exp1ubuntu8_amd64.deb ...
+Unpacking libldap2:amd64 (2.6.7+dfsg-1~exp1ubuntu8) ...
+Selecting previously unselected package librtmp1:amd64.
+Preparing to unpack .../16-librtmp1_2.4+20151223.gitfa8646d.1-2build7_amd64.deb ...
+Unpacking librtmp1:amd64 (2.4+20151223.gitfa8646d.1-2build7) ...
+Selecting previously unselected package libssh-4:amd64.
+Preparing to unpack .../17-libssh-4_0.10.6-2build2_amd64.deb ...
+Unpacking libssh-4:amd64 (0.10.6-2build2) ...
+Selecting previously unselected package libcurl4t64:amd64.
+Preparing to unpack .../18-libcurl4t64_8.5.0-2ubuntu10_amd64.deb ...
+Unpacking libcurl4t64:amd64 (8.5.0-2ubuntu10) ...
+Selecting previously unselected package curl.
+Preparing to unpack .../19-curl_8.5.0-2ubuntu10_amd64.deb ...
+Unpacking curl (8.5.0-2ubuntu10) ...
+Selecting previously unselected package libldap-common.
+Preparing to unpack .../20-libldap-common_2.6.7+dfsg-1~exp1ubuntu8_all.deb ...
+Unpacking libldap-common (2.6.7+dfsg-1~exp1ubuntu8) ...
+Selecting previously unselected package libsasl2-modules:amd64.
+Preparing to unpack .../21-libsasl2-modules_2.1.28+dfsg1-5ubuntu3_amd64.deb ...
+Unpacking libsasl2-modules:amd64 (2.1.28+dfsg1-5ubuntu3) ...
+Setting up libkeyutils1:amd64 (1.6.3-3build1) ...
+Setting up libbrotli1:amd64 (1.1.0-2build2) ...
+Setting up libsasl2-modules:amd64 (2.1.28+dfsg1-5ubuntu3) ...
+Setting up libpsl5t64:amd64 (0.21.2-1.1build1) ...
+Setting up libnghttp2-14:amd64 (1.59.0-1build4) ...
+Setting up krb5-locales (1.20.1-6ubuntu2) ...
+Setting up libldap-common (2.6.7+dfsg-1~exp1ubuntu8) ...
+Setting up libkrb5support0:amd64 (1.20.1-6ubuntu2) ...
+Setting up librtmp1:amd64 (2.4+20151223.gitfa8646d.1-2build7) ...
+Setting up libk5crypto3:amd64 (1.20.1-6ubuntu2) ...
+Setting up libdb5.3t64:amd64 (5.3.28+dfsg2-7) ...
+Setting up libkrb5-3:amd64 (1.20.1-6ubuntu2) ...
+Setting up openssl (3.0.13-0ubuntu3) ...
+Setting up publicsuffix (20231001.0357-0.1) ...
+Setting up libsasl2-modules-db:amd64 (2.1.28+dfsg1-5ubuntu3) ...
+Setting up ca-certificates (20240203) ...
+debconf: unable to initialize frontend: Dialog
+debconf: (No usable dialog-like program is installed, so the dialog based frontend cannot be used. at /usr/share/perl5/Debconf/FrontEnd/Dialog.pm line 79.)
+debconf: falling back to frontend: Readline
+debconf: unable to initialize frontend: Readline
+debconf: (Can't locate Term/ReadLine.pm in @INC (you may need to install the Term::ReadLine module) (@INC entries checked: /etc/perl /usr/local/lib/x86_64-linux-gnu/perl/5.38.2 /usr/local/share/perl/5.38.2 /usr/lib/x86_64-linux-gnu/perl5/5.38 /usr/share/perl5 /usr/lib/x86_64-linux-gnu/perl-base /usr/lib/x86_64-linux-gnu/perl/5.38 /usr/share/perl/5.38 /usr/local/lib/site_perl) at /usr/share/perl5/Debconf/FrontEnd/Readline.pm line 8.)
+debconf: falling back to frontend: Teletype
+Updating certificates in /etc/ssl/certs...
+146 added, 0 removed; done.
+Setting up libgssapi-krb5-2:amd64 (1.20.1-6ubuntu2) ...
+Setting up libsasl2-2:amd64 (2.1.28+dfsg1-5ubuntu3) ...
+Setting up libssh-4:amd64 (0.10.6-2build2) ...
+Setting up libldap2:amd64 (2.6.7+dfsg-1~exp1ubuntu8) ...
+Setting up libcurl4t64:amd64 (8.5.0-2ubuntu10) ...
+Setting up curl (8.5.0-2ubuntu10) ...
+Processing triggers for libc-bin (2.39-0ubuntu8) ...
+Processing triggers for ca-certificates (20240203) ...
+Updating certificates in /etc/ssl/certs...
+0 added, 0 removed; done.
+Running hooks in /etc/ca-certificates/update.d...
+done.
+[?2004h]0;root@2b0c7243a94b: /root@2b0c7243a94b:/# apt-get -y install curl[9Pupdate-y install curl[Kread escape sequence
+[?2004h]0;noadmin@lpc: ~/projects/devops_with_docker/1.4Missing_dependencies[01;32mnoadmin@lpc[00m:[01;34m~/projects/devops_with_docker/1.4Missing_dependencies[00m$ docker ps
+[?2004lCONTAINER ID   IMAGE     COMMAND                  CREATED         STATUS         PORTS     NAMES
+2b0c7243a94b   ubuntu    "sh -c 'while true; …"   4 minutes ago   Up 4 minutes             depend
+[?2004h]0;noadmin@lpc: ~/projects/devops_with_docker/1.4Missing_dependencies[01;32mnoadmin@lpc[00m:[01;34m~/projects/devops_with_docker/1.4Missing_dependencies[00m$ docker exec -it [7msh -c 'while true; do echo "Inp[27m[7mu[27m[7mt website:"; read website; echo "Searching.."; sleep 1; curl http://$website; done'[27m[Ash -c 'while true; do echo "Input website:"; read website; echo "Searching.."; sleep 1; curl http://$website; done'
+[?2004lError response from daemon: No such container: sh
+[?2004h]0;noadmin@lpc: ~/projects/devops_with_docker/1.4Missing_dependencies[01;32mnoadmin@lpc[00m:[01;34m~/projects/devops_with_docker/1.4Missing_dependencies[00m$ docker exec -it sh -c 'while true; do echo "Input website:"; read website; echo "Searching.."; sleep 1; curl http://$website; done'[A[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[Cdsh -c 'while true; do echo "Inp[1@u[A]0;noadmin@lpc: ~/projects/devops_with_docker/1.4Missing_dependencies[01;32mnoadmin@lpc[00m:[01;34m~/projects/devops_with_docker/1.4Missing_dependencies[00m$ [C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[Cesh -c 'while true; do echo "In[1@p[A]0;noadmin@lpc: ~/projects/devops_with_docker/1.4Missing_dependencies[01;32mnoadmin@lpc[00m:[01;34m~/projects/devops_with_docker/1.4Missing_dependencies[00m$ [C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[Cnsh -c 'while true; do echo "I[1@n[A]0;noadmin@lpc: ~/projects/devops_with_docker/1.4Missing_dependencies[01;32mnoadmin@lpc[00m:[01;34m~/projects/devops_with_docker/1.4Missing_dependencies[00m$ [C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[Csh -c 'while true; do echo "In[1P[A]0;noadmin@lpc: ~/projects/devops_with_docker/1.4Missing_dependencies[01;32mnoadmin@lpc[00m:[01;34m~/projects/devops_with_docker/1.4Missing_dependencies[00m$ [C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[Cpsh -c 'while true; do echo "I[1@n[A]0;noadmin@lpc: ~/projects/devops_with_docker/1.4Missing_dependencies[01;32mnoadmin@lpc[00m:[01;34m~/projects/devops_with_docker/1.4Missing_dependencies[00m$ [C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[Cesh -c 'while true; do echo "[1@I[A]0;noadmin@lpc: ~/projects/devops_with_docker/1.4Missing_dependencies[01;32mnoadmin@lpc[00m:[01;34m~/projects/devops_with_docker/1.4Missing_dependencies[00m$ [C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[Cnsh -c 'while true; do echo [1@"[A]0;noadmin@lpc: ~/projects/devops_with_docker/1.4Missing_dependencies[01;32mnoadmin@lpc[00m:[01;34m~/projects/devops_with_docker/1.4Missing_dependencies[00m$ [C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[Cdsh -c 'while true; do echo[1@ [A]0;noadmin@lpc: ~/projects/devops_with_docker/1.4Missing_dependencies[01;32mnoadmin@lpc[00m:[01;34m~/projects/devops_with_docker/1.4Missing_dependencies[00m$ [C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C sh -c 'while true; do ech[1@o[A]0;noadmin@lpc: ~/projects/devops_with_docker/1.4Missing_dependencies[01;32mnoadmin@lpc[00m:[01;34m~/projects/devops_with_docker/1.4Missing_dependencies[00m$ [C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C
+
+[?2004lInput website:
+helsinki.fi
+Searching..
+<html>
+<head><title>301 Moved Permanently</title></head>
+<body>
+<center><h1>301 Moved Permanently</h1></center>
+<hr><center>nginx/1.22.1</center>
+</body>
+</html>
+Input website:
+^[[A^[[D^[[B^[[B                http:     Searching..
+curl: (3) URL rejected: No host part in the URL
+Input website:
+Searching..
+curl: (3) URL rejected: No host part in the URL
+Input website:
+^C[?2004h]0;noadmin@lpc: ~/projects/devops_with_docker/1.4Missing_dependencies[01;32mnoadmin@lpc[00m:[01;34m~/projects/devops_with_docker/1.4Missing_dependencies[00m$ [?2004l
+exit
+
+Script done on 2024-04-27 14:26:46+03:00 [COMMAND_EXIT_CODE="130"]
