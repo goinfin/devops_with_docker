@@ -1,0 +1,48 @@
+Script started on 2024-04-27 15:01:31+03:00 [TERM="xterm-256color" TTY="/dev/pts/0" COLUMNS="117" LINES="37"]
+[?2004h]0;noadmin@lpc: ~/projects/devops_with_docker/1.5Sizes_of_images[01;32mnoadmin@lpc[00m:[01;34m~/projects/devops_with_docker/1.5Sizes_of_images[00m$ docker pull [7mdevopsdockeruh/simple-web-service:ubuntu[27mdevopsdockeruh/simple-web-service:ubuntu
+[?2004lubuntu: Pulling from devopsdockeruh/simple-web-service
+Digest: sha256:d44e1dce398732e18c7c2bad9416a072f719af33498302b02929d4c112e88d2a
+Status: Image is up to date for devopsdockeruh/simple-web-service:ubuntu
+docker.io/devopsdockeruh/simple-web-service:ubuntu
+[?2004h]0;noadmin@lpc: ~/projects/devops_with_docker/1.5Sizes_of_images[01;32mnoadmin@lpc[00m:[01;34m~/projects/devops_with_docker/1.5Sizes_of_images[00m$ docker pull [7mdevopsdockeruh/simple-web-service:alpine[27mdevopsdockeruh/simple-web-service:alpine
+[?2004lalpine: Pulling from devopsdockeruh/simple-web-service
+
+[1A[2Kba3557a56b15: Pulling fs layer [1B
+[1A[2K1dace236434b: Pulling fs layer [1B
+[1A[2K4f4fb700ef54: Pulling fs layer [1B[1A[2K4f4fb700ef54: Download complete [1B[3A[2Kba3557a56b15: Downloading [>                                                  ]  28.75kB/2.812MB[3B[3A[2Kba3557a56b15: Downloading [=>                                                 ]  90.91kB/2.812MB[3B[3A[2Kba3557a56b15: Downloading [====>                                              ]  278.5kB/2.812MB[3B[2A[2K1dace236434b: Downloading [>                                                  ]   51.2kB/5.117MB[2B[3A[2Kba3557a56b15: Downloading [============>                                      ]  704.5kB/2.812MB[3B[2A[2K1dace236434b: Downloading [=>                                                 ]  159.9kB/5.117MB[2B[3A[2Kba3557a56b15: Downloading [===========================>                       ]  1.522MB/2.812MB[3B[3A[2Kba3557a56b15: Downloading [=============================>                     ]  1.686MB/2.812MB[3B[2A[2K1dace236434b: Downloading [===>                                               ]  343.3kB/5.117MB[2B[3A[2Kba3557a56b15: Verifying Checksum [3B[3A[2Kba3557a56b15: Download complete [3B[3A[2Kba3557a56b15: Extracting [>                                                  ]  32.77kB/2.812MB[3B[3A[2Kba3557a56b15: Extracting [==================================================>]  2.812MB/2.812MB[3B[2A[2K1dace236434b: Downloading [=======>                                           ]  736.5kB/5.117MB[2B[3A[2Kba3557a56b15: Pull complete [3B[2A[2K1dace236434b: Downloading [==============>                                    ]  1.457MB/5.117MB[2B[2A[2K1dace236434b: Downloading [========================>                          ]  2.483MB/5.117MB[2B[2A[2K1dace236434b: Downloading [============================================>      ]  4.556MB/5.117MB[2B[2A[2K1dace236434b: Downloading [=================================================> ]  5.039MB/5.117MB[2B[2A[2K1dace236434b: Verifying Checksum [2B[2A[2K1dace236434b: Download complete [2B[2A[2K1dace236434b: Extracting [>                                                  ]  65.54kB/5.117MB[2B[2A[2K1dace236434b: Extracting [==================================================>]  5.117MB/5.117MB[2B[2A[2K1dace236434b: Pull complete [2B[1A[2K4f4fb700ef54: Extracting [==================================================>]      32B/32B[1B[1A[2K4f4fb700ef54: Extracting [==================================================>]      32B/32B[1B[1A[2K4f4fb700ef54: Pull complete [1BDigest: sha256:dd4d367476f86b7d7579d3379fe446ae5dfce25480903fb0966fc2e5257e0543
+Status: Downloaded newer image for devopsdockeruh/simple-web-service:alpine
+docker.io/devopsdockeruh/simple-web-service:alpine
+[?2004h]0;noadmin@lpc: ~/projects/devops_with_docker/1.5Sizes_of_images[01;32mnoadmin@lpc[00m:[01;34m~/projects/devops_with_docker/1.5Sizes_of_images[00m$ docker image ls
+[?2004lREPOSITORY                          TAG               IMAGE ID       CREATED       SIZE
+ubuntu                              latest            de52d803b224   3 days ago    76.2MB
+ubuntu                              22.04             437ec753bef3   9 days ago    77.9MB
+ubuntu                              jammy_jellyfish   437ec753bef3   9 days ago    77.9MB
+devopsdockeruh/simple-web-service   ubuntu            4e3362e907d5   3 years ago   83MB
+devopsdockeruh/simple-web-service   alpine            fd312adc88e0   3 years ago   15.7MB
+[?2004h]0;noadmin@lpc: ~/projects/devops_with_docker/1.5Sizes_of_images[01;32mnoadmin@lpc[00m:[01;34m~/projects/devops_with_docker/1.5Sizes_of_images[00m$ docker run[K[K[Kps
+[?2004lCONTAINER ID   IMAGE     COMMAND   CREATED   STATUS    PORTS     NAMES
+[?2004h]0;noadmin@lpc: ~/projects/devops_with_docker/1.5Sizes_of_images[01;32mnoadmin@lpc[00m:[01;34m~/projects/devops_with_docker/1.5Sizes_of_images[00m$ docker run -d --rm -it --name alpine [7mdevopsdockeruh/sim[27m[7mp[27m[7mle-web-service:alpine[27m[A]0;noadmin@lpc: ~/projects/devops_with_docker/1.5Sizes_of_images[01;32mnoadmin@lpc[00m:[01;34m~/projects/devops_with_docker/1.5Sizes_of_images[00m$ [C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[Cdevopsdockeruh/simple-web-service:alpine 
+[?2004le7e3a08ef2d6ea0c50b8c86e65bfe0d43971fc043efecdf39b04639f9d8509d5
+[?2004h]0;noadmin@lpc: ~/projects/devops_with_docker/1.5Sizes_of_images[01;32mnoadmin@lpc[00m:[01;34m~/projects/devops_with_docker/1.5Sizes_of_images[00m$ docker ps
+[?2004lCONTAINER ID   IMAGE                                      COMMAND                 CREATED         STATUS         PORTS     NAMES
+e7e3a08ef2d6   devopsdockeruh/simple-web-service:alpine   "/usr/src/app/server"   5 seconds ago   Up 4 seconds             alpine
+[?2004h]0;noadmin@lpc: ~/projects/devops_with_docker/1.5Sizes_of_images[01;32mnoadmin@lpc[00m:[01;34m~/projects/devops_with_docker/1.5Sizes_of_images[00m$ docker exec -it alpine sh
+[?2004l/usr/src/app # [6ntail -f ./text.log
+2024-04-27 12:09:04 +0000 UTC
+2024-04-27 12:09:06 +0000 UTC
+Secret message is: 'You can find the source code here: https://github.com/docker-hy'
+2024-04-27 12:09:08 +0000 UTC
+2024-04-27 12:09:10 +0000 UTC
+2024-04-27 12:09:12 +0000 UTC
+2024-04-27 12:09:14 +0000 UTC
+2024-04-27 12:09:16 +0000 UTC
+Secret message is: 'You can find the source code here: https://github.com/docker-hy'
+2024-04-27 12:09:18 +0000 UTC
+2024-04-27 12:09:20 +0000 UTC
+2024-04-27 12:09:22 +0000 UTC
+^C
+/usr/src/app # [6nexit
+[?2004h]0;noadmin@lpc: ~/projects/devops_with_docker/1.5Sizes_of_images[01;32mnoadmin@lpc[00m:[01;34m~/projects/devops_with_docker/1.5Sizes_of_images[00m$ [?2004l
+exit
+
+Script done on 2024-04-27 15:09:47+03:00 [COMMAND_EXIT_CODE="130"]
